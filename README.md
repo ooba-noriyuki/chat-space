@@ -5,8 +5,8 @@
 ### Table Definition
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false,uniqe: true|
+|name|string|null: false, add_index|
+|email|string|null: false, uniqe: true|
 |password|string|null: false|
 
 ### Association
@@ -23,7 +23,6 @@
 |image|string|
 |group_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foregin_key: true|
-|timestamps|datetime|null: false|
 
 ### Association
 - belongs_to :user
@@ -35,12 +34,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|user_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :users, through: :members
 - has_many :members
 - has_many :messages
+- has_many :users, through: :members
 
 ## membersテーブル
 
