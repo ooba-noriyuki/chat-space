@@ -1,0 +1,29 @@
+.notification
+  .notice
+    チャットグループが作成されました。
+.chat-contents
+  .chat-side
+    .chat-side__user
+      .chat-side__user--name
+        taro
+        .chat-side__user--icon
+          = link_to("#" , class: "button") do
+            = fa_icon "pencil-square-o"
+          = link_to("#" , class: "button") do
+            = fa_icon "cog"
+
+    = render "chat-side-groups"
+
+  .chat-main
+    .chat-main__header
+      .chat-main__header--group
+        .chat-main__header--group-name
+          test
+        .chat-main__header-members
+          MEMBER: taro
+      .chat-main__header--group-edit-btn
+        = link_to "Edit", "#"
+
+    = render "chat-main-message"
+
+    = render "chat-footer"

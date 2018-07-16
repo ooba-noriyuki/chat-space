@@ -1,0 +1,11 @@
+$white: #FFFFFF;
+$lightblue: #38AEF0;
+$lightgray: #999999;
+
+@mixin clearfix() {
+  &:after {
+  display: block;
+  content: "";
+  clear: both;
+ }
+}

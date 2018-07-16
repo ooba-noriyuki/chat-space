@@ -1,0 +1,51 @@
+.chat-main__footer {
+  background-color: #DDDDDD;
+  position: absolute;
+  padding: 20px 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .chat-footer__form {
+    height: 50px;
+    float: left;
+    width: calc(100% - 115px);
+    position: relative;
+
+    .chat-footer__form-message {
+      color: #434A54;
+      display: block;
+      padding: 15px 10px;
+      font-size: 16px;
+      border: none;
+      width: calc(100% - 20px);
+    }
+
+    .chat-footer__form-image {
+      display: inline-block;
+      width: 40px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      top: 0;
+      right: 0;
+      position: absolute;
+      .chat-footer__form--image-hidden {
+        display: none;
+      }
+    }
+  }
+
+  .chat-footer__form--send-btn {
+    color: $white;
+    background-color: $lightblue;
+    line-height: 50px;
+    float: left;
+    margin-left: 15px;
+    border: 2px solid $lightblue;
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+  }
+}

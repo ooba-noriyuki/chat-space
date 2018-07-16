@@ -1,0 +1,8 @@
+.chat-main__footer
+  =form_for("#") do |f|
+    .chat-footer__form
+      = f.text_area :text, class: "chat-footer__form-message", placeholder: "type a message", rows: "1"
+      %label.upload-label{for: "upload-icon", class: "chat-footer__form-image"}
+        %i.fa.fa-picture-o
+          = f.file_field :image, class: "chat-footer__form--image-hidden", id: "upload-icon"
+    = f.submit :send, class: "chat-footer__form--send-btn"

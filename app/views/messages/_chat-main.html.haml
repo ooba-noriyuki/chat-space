@@ -1,0 +1,19 @@
+.chat-main__header
+  .chat-main__header--group
+    .chat-main__header--group-name
+      %h2  test
+    %ul.chat-main__header-members
+      MEMBER:
+      %li.chat-header__user-name
+  .chat-main__header--group-edit-btn
+    = link_to "Edit", "#"
+
+.chat-main__body
+  %ul.chat-main__body--messages-list
+    %li.chat-main__message
+      .chat-main__message-name
+      taro
+      .chat-main__message-time
+      2018/06/22/14:02:00
+      .chat-main__message-body
+      test
