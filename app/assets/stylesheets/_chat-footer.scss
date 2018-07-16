@@ -1,4 +1,4 @@
-.chat-main__footer {
+.chat-footer {
   background-color: #DDDDDD;
   position: absolute;
   padding: 20px 40px;
@@ -12,7 +12,7 @@
     width: calc(100% - 115px);
     position: relative;
 
-    .chat-footer__form-message {
+    .chat-footer__form__message {
       color: #434A54;
       display: block;
       padding: 15px 10px;
@@ -21,7 +21,7 @@
       width: calc(100% - 20px);
     }
 
-    .chat-footer__form-image {
+    .chat-footer__form__image {
       display: inline-block;
       width: 40px;
       height: 50px;
@@ -30,13 +30,13 @@
       top: 0;
       right: 0;
       position: absolute;
-      .chat-footer__form--image-hidden {
+      .chat-footer__form__image-hidden {
         display: none;
       }
     }
   }
 
-  .chat-footer__form--send-btn {
+  .chat-footer__form__send-btn {
     color: $white;
     background-color: $lightblue;
     line-height: 50px;

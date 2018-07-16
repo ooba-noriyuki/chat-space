@@ -1,15 +1,15 @@
-.chat-side {
+.sidebar {
   width: 300px;
   height: 100vh;
   background-color: #2f3e51;
   color: $white;
 
-  .chat-side__user {
+  .sidebar__user {
     height: 100px;
     background-color: #253141;
     padding: 0px 20px;
 
-    .chat-side__user--name {
+    .sidebar__user__name {
       font-size: 16px;
       font-weight: bold;
       line-height: 100px;
@@ -24,17 +24,17 @@
     }
   }
 
-  .chat-side__groups {
+  .sidebar__groups {
     background-color: #2f3e51;
     padding: 20px;
     color: $white;
 
-    .chat-side__group-name {
+    .sidebar__group-name {
       font-size: 15px;
       margin: 20px 0px 5px;
     }
 
-    .chat-side__group-message {
+    .sidebar__group-message {
       font-size: 11px;
       margin-bottom: 40px;
     }

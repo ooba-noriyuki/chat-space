@@ -2,28 +2,28 @@
   .notice
     チャットグループが作成されました。
 .chat-contents
-  .chat-side
-    .chat-side__user
-      .chat-side__user--name
+  .sidebar
+    .sidebar__user
+      .sidebar__user__name
         taro
-        .chat-side__user--icon
+        .sidebar__user--icon
           = link_to("#" , class: "button") do
             = fa_icon "pencil-square-o"
           = link_to("#" , class: "button") do
             = fa_icon "cog"
 
-    = render "chat-side-groups"
+    = render "sidebar-groups"
 
-  .chat-main
-    .chat-main__header
-      .chat-main__header--group
-        .chat-main__header--group-name
+  .chat
+    .chat-header
+      .chat-header__group
+        .chat-header__group__name
           test
-        .chat-main__header-members
+        .chat-header__members
           MEMBER: taro
-      .chat-main__header--group-edit-btn
+      .chat-header__group__edit-btn
         = link_to "Edit", "#"
 
-    = render "chat-main-message"
+    = render "chat-body"
 
     = render "chat-footer"

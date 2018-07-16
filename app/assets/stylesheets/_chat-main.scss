@@ -1,31 +1,31 @@
-.chat-main {
+.chat {
   height: 100%;
   width: calc(100% - 300px);
   float: left;
   position: relative;
 
-  .chat-main__header {
+  .chat-header {
     height: 100px;
     padding: 0px 40px;
     background-color: $white;
 
-    .chat-main__header--group {
+    .chat-header__group {
       float: left;
 
-      .chat-main__header--group-name {
+      .chat-header__group__name {
         font-size: 20px;
         color: #333333;
         margin: 35px 0px 15px;
       }
 
-      .chat-main__header-members {
+      .chat-header__members {
         font-size: 12px;
         float: left;
-        color: #999999;
+        color: $lightgray;
       }
     }
 
-    .chat-main__header--group-edit-btn {
+    .chat-header__group__edit-btn {
       float: right;
       height: 40px;
       margin-top: 28px;
@@ -42,35 +42,35 @@
     }
   }
 
- .chat-main__body {
+ .chat-body {
     height: calc(100% - 190px);
     padding: 0px 40px;
     background-color: $white;
     border-top: 1px solid #eeeeee;
     overflow-y: scroll;
 
-    .chat-main__body--messages-list {
+    .chat-body__messages-list {
       float: left;
       margin: 46px 0px 10px;
-    }
 
-    .chat-main__message-name {
-      padding-right: 10px;
-      font-size: 16px;
-      color: #434A54;
-      font-weight: bold;
-    }
+      .chat__message-name {
+        padding-right: 10px;
+        font-size: 16px;
+        color: #434A54;
+        font-weight: bold;
+      }
 
-    .chat-main__message-time {
-      font-size: 12px;
-      color: $lightgray;
-    }
+      .chat__message-time {
+        font-size: 12px;
+        color: $lightgray;
+      }
 
-    .chat-main__message-body {
-      font-size: 14px;
-      color: #434A54;
-      margin-bottom: 40px;
-      clear: both;
+      .chat__message-body {
+        font-size: 14px;
+        color: #434A54;
+        margin-bottom: 40px;
+        clear: both;
+      }
     }
   }
 }
