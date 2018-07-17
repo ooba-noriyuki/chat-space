@@ -14,10 +14,10 @@
       font-weight: bold;
       line-height: 100px;
 
-      .chat-side__user--icon {
+      .sidebar__user--icon {
         float: right;
         a {
-          list-style: none;
+          text-decoration: none;
           color: $white;
         }
       }
