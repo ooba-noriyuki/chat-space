@@ -25,18 +25,20 @@
   }
 
   &__groups {
+    height: calc( 100vh - 100px);
+    .sidebar__group {
     background-color: #2f3e51;
-    padding: 20px;
+    padding: 0px 20px 0px;
     color: $white;
+      &-name {
+        font-size: 15px;
+        margin: 20px 0px 5px;
+      }
 
-    .sidebar__group-name {
-      font-size: 15px;
-      margin: 20px 0px 5px;
-    }
-
-    .sidebar__group-message {
-      font-size: 11px;
-      margin-bottom: 40px;
+      &-message {
+        font-size: 11px;
+        margin-bottom: 40px;
+      }
     }
   }
 }
