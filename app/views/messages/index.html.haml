@@ -24,6 +24,7 @@
       .chat-header__group__edit-btn
         = link_to "Edit", "#"
 
-    = render "chat-body"
+    .chat-body
+      = render "chat-body__messages-list"
 
     = render "chat-footer"
