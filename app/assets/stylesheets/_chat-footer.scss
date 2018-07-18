@@ -31,7 +31,7 @@
       top: 0;
       right: 0;
       position: absolute;
-      .chat-footer__form__image-hidden {
+      &-hidden {
         display: none;
       }
     }

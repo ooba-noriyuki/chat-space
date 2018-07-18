@@ -4,12 +4,12 @@
   background-color: #2f3e51;
   color: $white;
 
-  .sidebar__user {
+  &__user {
     height: 100px;
     background-color: #253141;
     padding: 0px 20px;
 
-    .sidebar__user__name {
+    &__name {
       font-size: 16px;
       font-weight: bold;
       line-height: 100px;
@@ -24,7 +24,7 @@
     }
   }
 
-  .sidebar__groups {
+  &__groups {
     background-color: #2f3e51;
     padding: 20px;
     color: $white;
