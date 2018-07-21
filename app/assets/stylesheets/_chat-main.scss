@@ -1,0 +1,81 @@
+.chat {
+  height: 100%;
+  width: calc(100% - 300px);
+  float: left;
+  position: relative;
+
+  &-header {
+    height: 100px;
+    padding: 0px 40px;
+    background-color: $white;
+
+    &__group {
+      float: left;
+
+      &__name {
+        font-size: 20px;
+        color: #333333;
+        margin: 30px 0px 15px;
+      }
+
+      .chat-header__members {
+        font-size: 12px;
+        float: left;
+        color: $lightgray;
+      }
+    }
+
+    &__group__edit-btn {
+      float: right;
+      height: 40px;
+      margin-top: 28px;
+      line-height: 40px;
+      text-align: center;
+      padding: 0px 20px;
+      font-weight: bold;
+      border: 2px solid $lightblue;
+
+      a {
+        color: $lightblue;
+        text-decoration: none;
+      }
+    }
+  }
+
+ .chat-body {
+    height: calc(100% - 190px);
+    padding: 0px 40px;
+    background-color: $white;
+    border-top: 1px solid #eeeeee;
+    overflow-y: scroll;
+
+    &__messages-list {
+      float: left;
+      margin: 46px 0px 0px;
+
+      .chat__message-name {
+        margin-right: 10px;
+        font-size: 16px;
+        color: #434A54;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .chat__message-time {
+        font-size: 12px;
+        color: $lightgray;
+        float: right;
+        line-height: 24px
+      }
+
+      .chat__message-body {
+        font-size: 14px;
+        color: #434A54;
+        margin-bottom: 40px;
+        clear: both;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
