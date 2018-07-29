@@ -18,5 +18,7 @@ module ChatSpace
       g.helper false
       g.javascripts false
     end
+    #setting devise flase locale
+    config.i18n.default_locale = :ja
   end
 end
