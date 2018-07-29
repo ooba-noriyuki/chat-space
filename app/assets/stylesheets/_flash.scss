@@ -1,0 +1,15 @@
+.notification {
+  &_notice {
+    background-color: #38AEF0;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  &_alert {
+    background-color: #F35500;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+  }
+}
