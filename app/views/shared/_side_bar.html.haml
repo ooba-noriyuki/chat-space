@@ -10,19 +10,11 @@
             = fa_icon "cog", class: "button"
 
     .sidebar__groups
-      = render "sidebar__group"
+      .sidebar__group
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .sidebar__group-name
+              = group.name
+            .sidebar__group-message
+              message
 
-  .chat
-    .chat-header
-      .chat-header__group
-        .chat-header__group__name
-          test
-        .chat-header__members
-          MEMBER: taro
-      .chat-header__group__edit-btn
-        = link_to "Edit", "#"
-
-    .chat-body
-      = render "chat-body__messages-list"
-
-    = render "chat-footer"
