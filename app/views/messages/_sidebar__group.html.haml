@@ -1,7 +1,0 @@
-.sidebar__group
-  - current_user.groups.each do |group|
-    = link_to group_messages_path(group) do
-      .sidebar__group-name
-        = group.name
-      .sidebar__group-message
-        message
