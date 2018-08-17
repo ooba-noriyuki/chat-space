@@ -52,6 +52,7 @@
     &__messages-list {
       float: left;
       margin: 46px 0px 0px;
+      clear: both;
 
       .chat__message-name {
         margin-right: 10px;
