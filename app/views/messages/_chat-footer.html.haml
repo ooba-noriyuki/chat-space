@@ -1,8 +1,17 @@
+/.chat-footer
+/  .chat-footer__form
+/    = form_for [@group, @message] do |f|
+/      = f.text_area :body, class: "chat-footer__form__message", placeholder: "type a message", rows: "1"
+/      = f.label :image, class: "chat-footer__form__image" do
+/        = fa_icon "picture-o"
+/        = f.file_field :image, class: "chat-footer__form__image-hidden", id: "upload-icon"
+/      = f.submit "Send", class: "chat-footer__form__send-btn"
+
 .chat-footer
   = form_for [@group, @message] do |f|
     .chat-footer__form
       = f.text_area :body, class: "chat-footer__form__message", placeholder: "type a message", rows: "1"
-      = f.label :image, class: "chat-footer__form__image" do
+      %label{class: "chat-footer__form__image" }
         = fa_icon "picture-o"
         = f.file_field :image, class: "chat-footer__form__image-hidden", id: "upload-icon"
     = f.submit "Send", class: "chat-footer__form__send-btn"
