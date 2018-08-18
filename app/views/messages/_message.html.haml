@@ -5,5 +5,6 @@
     = message.created_at
   .chat__message-body
     - if message.body.present?
-      = message.body
+      %p.chat__message-body__content
+        = message.body
     = image_tag message.image.url, class: "lower-message__image" if message.image.present?
