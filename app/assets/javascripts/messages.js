@@ -1,23 +1,21 @@
 $(function(){
   function buildHTML(message){
-    var img = message.image? `<img src=${message.image}>` : "";
-    var html = `<div class="chat__message-name">
-                  ${message.user_name}
-                </div>
-                <div class="chat__message-time">
-                  ${message.created_at}
-                </div>
-                <div class="chat__message-body">
-                  ${message.body}
-                </div>
-                <div class="chat__message-body">
-                  ${img}
+    var img = message.image ? `<img src=${ message.image }>` : "";
+    var html = `<div class="chat-body__messages-list">
+                  <div class="chat__message-name">
+                    ${ message.user_name }
+                  </div>
+                  <div class="chat__message-time">
+                    ${ message.created_at }
+                  </div>
+                  <div class="chat__message-body">
+                    <p class="chat__message-body__content">
+                      ${ message.body }
+                    </p>
+                    ${ img }
+                  </div>
                 </div>`
     return html;
-  }
-
-  function scroll(messagebox){
-    messagebox.animate({scrollTop: $('.chat-body__messages-list')[0].scrollHeight},'fast');
   }
 
   $('#new_message').on('submit', function(e){
@@ -34,10 +32,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-body__messages-list').append(html);
+      $('.chat-body').append(html);
       $('#new_message')[0].reset();
       $('.chat-footer__form__send-btn').prop('disabled', false);
-      scroll($('.chat-body__messages-list'));
+      $('.chat-body').animate({ scrollTop: $('.chat-body')[0].scrollHeight },'slow');
     })
     .fail(function(){
       alert('error');
