@@ -22,11 +22,11 @@ $(document).on('turbolinks:load', function(){
     searchResult.append(html);
     }
 
-    function appendAddUser(user_id, user_name) {
-      var html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${user_id}">
-                    <input name="group[user_ids][]", type='hidden', value='${user_id}'>
+    function appendAddUser(userId, userName) {
+      var html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${userId}">
+                    <input name="group[user_ids][]", type='hidden', value='${userId}'>
                       <p class="chat-group-user__name">
-                        ${user_name}
+                        ${userName}
                       </p>
                       <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                   </div>`
@@ -35,23 +35,21 @@ $(document).on('turbolinks:load', function(){
 
     $('#user-search-field').on('keyup', function(){
       var input = $(this).val();
-
-      $.ajax({
-        type: 'GET',
-        url: '/users',
-        data: { keyword: input },
-        dataType: 'json'
-      })
+      if((input != "") && (input != " "));
+        $.ajax({
+          type: 'GET',
+          url: '/users',
+          data: { keyword: input },
+          dataType: 'json'
+        })
       .done(function(users){
         $('#user-search-result').empty();
-        if((input != "") && (input != " ")){
-          if (users.length !== 0) {
-            users.forEach(function(user){
-              appendUser(user);
-            });
-          } else {
-              appendNoUser("一致するユーザーはいません");
-          }
+        if (users.length !== 0) {
+          users.forEach(function(user){
+            appendUser(user);
+          });
+        } else {
+            appendNoUser("一致するユーザーはいません");
         }
       })
       .fail(function(){
@@ -60,13 +58,13 @@ $(document).on('turbolinks:load', function(){
     });
 
     $('#user-search-result').on("click", ".chat-group-user__btn--add", function(){
-      var add_user_id = $(this).attr("data-user-id");
-      var add_user_name = $(this).attr("data-user-name");
-      appendAddUser(add_user_id, add_user_name);
+      var userId = $(this).data("user-id");
+      var userName = $(this).data("user-name");
+      appendAddUser(userId, userName);
       $(this).parent().remove();
     });
 
-    $('#chat-group-users').on("click", ".chat-group-user__btn--remove", function(){
+    $('#chat-group-users').on("click", ".js-remove-btn", function(){
       $(this).parent().remove();
     });
   });
