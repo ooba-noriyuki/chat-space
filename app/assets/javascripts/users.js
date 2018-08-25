@@ -2,8 +2,6 @@ $(document).on('turbolinks:load', function(){
   $(function(){
     var searchResult = $('#user-search-result');
     var addedUsers = $('#chat-group-users');
-    var search_user_ids = [document.getElementsByName("group[user_ids][]")[0].value];
-
 
     function appendUser(user) {
       var html = `<div class="chat-group-user clearfix">
@@ -25,7 +23,7 @@ $(document).on('turbolinks:load', function(){
     }
 
     function appendAddUser(user_id, user_name) {
-      var html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${ user_id }">
+      var html = `<div class="chat-group-user clearfix js-chat-member" id="chat-group-user-${user_id}">
                     <input name="group[user_ids][]", type='hidden', value='${user_id}'>
                       <p class="chat-group-user__name">
                         ${user_name}
@@ -63,10 +61,9 @@ $(document).on('turbolinks:load', function(){
 
     $('#user-search-result').on("click", ".chat-group-user__btn--add", function(){
       var add_user_id = $(this).attr("data-user-id");
-      var add_user_name = $(this).attr("data-user-name")
+      var add_user_name = $(this).attr("data-user-name");
       appendAddUser(add_user_id, add_user_name);
       $(this).parent().remove();
-      search_user_ids.push(add_user_id)
     });
 
     $('#chat-group-users').on("click", ".chat-group-user__btn--remove", function(){
