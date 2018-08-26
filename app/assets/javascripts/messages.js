@@ -62,9 +62,8 @@ $(document).on('turbolinks:load', function(){
         });
       }
       $('.chat-body').append(insertHTML);
-      console.log("ok");
     })
-    .fail(function() {
+    .fail(function(data) {
       alert('自動更新に失敗しました');
     });
   } else {
