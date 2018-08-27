@@ -1,7 +1,7 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var img = message.image ? `<img src=${ message.image }>` : "";
-    var html = `<div class="chat-body__messages-list">
+    var html = `<div class="chat-body__messages-list" data-message_id=${message.id}>
                   <div class="chat__message-name">
                     ${ message.user_name }
                   </div>
@@ -41,4 +41,32 @@ $(function(){
       alert('error');
     })
   })
+
+   var interval = setInterval(function() {
+     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+       var group_last_message_id = $('.chat-body__messages-list:last').data("message_id")
+       var message_last_id = (group_last_message_id? group_last_message_id : 0)
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      dataType: 'json',
+      data: {
+       message: { id: message_last_id }
+      }
+    })
+    .done(function(data) {
+      var insertHTML = '';
+      if (data.length) {
+        data.forEach(function(message) {
+          insertHTML += buildHTML(message);
+        });
+      }
+      $('.chat-body').append(insertHTML);
+    })
+    .fail(function(data) {
+      alert('自動更新に失敗しました');
+    });
+  } else {
+    clearInterval(interval);
+   }} , 5 * 1000 );
 });
