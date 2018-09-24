@@ -43,9 +43,9 @@ $(document).on('turbolinks:load', function(){
   })
 
    var interval = setInterval(function() {
-     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-       var group_last_message_id = $('.chat-body__messages-list:last').data("message_id")
-       var message_last_id = (group_last_message_id? group_last_message_id : 0)
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var group_last_message_id = $('.chat-body__messages-list:last').data("message_id")
+      var message_last_id = group_last_message_id ? group_last_message_id : 0
     $.ajax({
       url: location.href,
       type: 'GET',
@@ -58,10 +58,13 @@ $(document).on('turbolinks:load', function(){
       var insertHTML = '';
       if (data.length) {
         data.forEach(function(message) {
-          insertHTML += buildHTML(message);
+          if (message.id > message_last_id) {
+            insertHTML += buildHTML(message);
+            $('.chat-body').append(insertHTML);
+            $('.chat-body').animate({ scrollTop: $('.chat-body')[0].scrollHeight },'slow');
+          }
         });
       }
-      $('.chat-body').append(insertHTML);
     })
     .fail(function(data) {
       alert('自動更新に失敗しました');
